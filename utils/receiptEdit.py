@@ -58,7 +58,7 @@ def get_formatted_receipt(receipt: dict):
 
 
 def get_executed_receipts(receipt_list: list):
-    """Получаем список завершенных операций"""
+    """Возвращаем список завершенных операций"""
     result_list = []
     for i in receipt_list:
         if i.get("state") == "EXECUTED":
@@ -67,7 +67,7 @@ def get_executed_receipts(receipt_list: list):
 
 
 def get_latest_receipts(count: int, receipt_list: list):
-    """Получаем список последних операций
+    """Возвращаем список последних операций
     необходимое кол-во операций получаем в параметре count"""
     result_list = sorted(receipt_list, key=lambda receipt: receipt["date"], reverse=True)[0:count]
     return result_list
